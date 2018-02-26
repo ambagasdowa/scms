@@ -13,7 +13,8 @@
         "josegonzalez/dotenv": "2.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "symfony/event-dispatcher": "^4.0",
-        "symfony/lock": "^4.0"
+        "symfony/lock": "^4.0",
+        "maiconpinto/cakephp-adminlte-theme": "^1.0"
     },
     "require-dev": {
         "cakephp/cakephp-codesniffer": "^3.0",
