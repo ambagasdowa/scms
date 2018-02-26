@@ -214,3 +214,14 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+/**
+*   Load a paper theme
+*/
+Plugin::load('Paper');
+
+/**
+  * Load a adminlte dashboard theme
+  * uncomment for enable
+*/
+Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
