@@ -80,7 +80,18 @@ $cakeDescription = '.:: XMF Cristina ::.';
 
     <script type="text/javascript">
         $(document).ready(function(){
+
             demo.initChartist();
+
+            // $.notify({
+            //     icon: 'ti-package',
+            //     message: "<b>XMF Cristina</b> - Proceso Electoral Local."
+            //
+            //   },{
+            //       type: 'warning',
+            //       timer: 2000
+            //   });
+
         });
     </script>
 </html>
