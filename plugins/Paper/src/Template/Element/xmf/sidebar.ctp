@@ -12,7 +12,7 @@ Tip 2: you can change the color of the active button using the data-active-color
 
         <ul class="nav">
             <li class="active">
-                <a href="<?php echo $this->Url->build('/pages/reports/Monitor'); ?>">
+                <a href="<?php echo $this->Url->build('/pages/reports/monitor'); ?>">
                     <i class="ti-package"></i>
                     <p>MONITOR CASILLAS</p>
                 </a>
