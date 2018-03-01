@@ -18,19 +18,26 @@ demo = {
 
     initChartist: function(){
 
-        var dataSales = {
-          labels: ['12:00HRS', '18:00HRS', 'DESPUES DEL CONTEO'],
-          series: [
-            [5500,50287, 20385, 70490],
-            [1230,26067, 30152, 70093],
-            [5220,14023, 21013, 60867]
-          ]
-        };
+      var dataSales = {
+        labels: ['7:00AM', '7:30AM', '8:00AM', '8:30AM', '9:00AM', '10:00AM', '11:00AM', '11:59AM'],
+        series: [
+           [0,287, 385, 490, 562, 594, 626, 698, 895, 952],
+          [0,67, 152, 193, 240, 387, 435, 535, 642, 744],
+        ]
+      };
+
+      var dataSales2 = {
+        labels: ['12:00HRS', '13:00HRS', '14:00HRS', '15:00HRS', '16:00HRS', '17:00HRS', '17:30AM', '17:59AM'],
+        series: [
+           [0,587, 485, 690, 762, 894, 926, 1098, 1895, 1952],
+          [0,167, 652, 753, 340, 487, 435, 1535, 2642, 2744],
+        ]
+      };
 
         var optionsSales = {
           lineSmooth: false,
           low: 0,
-          high: 80000,
+          high: 1200,
           showArea: true,
           height: "245px",
           axisX: {
@@ -40,7 +47,22 @@ demo = {
             divisor: 3
           }),
           showLine: true,
-          showPoint: false,
+          showPoint: true,
+        };
+        var optionsSales2 = {
+          lineSmooth: false,
+          low: 0,
+          high: 3000,
+          showArea: true,
+          height: "245px",
+          axisX: {
+            showGrid: false,
+          },
+          lineSmooth: Chartist.Interpolation.simple({
+            divisor: 3
+          }),
+          showLine: true,
+          showPoint: true,
         };
 
         var responsiveSales = [
@@ -54,13 +76,14 @@ demo = {
         ];
 
         Chartist.Line('#chartHours', dataSales, optionsSales, responsiveSales);
+        Chartist.Line('#chartHours2', dataSales2, optionsSales2, responsiveSales);
 
 
         var data = {
-          labels: ['12 Horas', '18 Horas', 'Después Conteo'],
+          labels: ['12 Horas', '13 Horas', '14 Horas', '15 Horas', '16 Horas', '17 Horas',],
           series: [
-              [842, 1543, 2820,4200],
-              [410,80,453, 1200]
+              [100,200,842, 1543, 2820,4200,5400],
+              [50,410,680,753, 900,1100,1200]
           ]
         };
 
@@ -84,6 +107,7 @@ demo = {
         ];
 
         Chartist.Line('#chartActivity', data, options, responsiveOptions);
+        Chartist.Line('#chartActivity1', data, options, responsiveOptions);
 
         var dataPreferences = {
             series: [
@@ -105,7 +129,7 @@ demo = {
         Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
 
         Chartist.Pie('#chartPreferences', {
-          labels: ['5990','1200'],
+          labels: ['9,220','850'],
           series: [80, 20]
         });
     },
