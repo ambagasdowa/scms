@@ -30,6 +30,19 @@ class PagesController extends AppController
 {
 
     /**
+    *    set a custom theme
+    *    @param paper fix
+    */
+
+    public function beforeRender (\Cake\Event\Event $event) {
+      // NOTE choose a theme
+      $this->viewBuilder()->theme('Paper');
+      // OR
+      // $this->viewBuilder()->theme('AdminLTE');
+      // NOTE choose a theme
+    }
+
+    /**
      * Displays a view
      *
      * @param array ...$path Path segments.
