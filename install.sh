@@ -36,6 +36,6 @@ pwd
 # echo myPassword | sudo -S command
 echo "we need the credential for change the owner of tmp dir"
 
-sudo chown -R www-data:www-data $basedir"/tmp"
+sudo chown -R cyberio:cyberio $basedir"/tmp"
 sudo chmod -R 755 $basedir"/tmp"
 echo "done"
