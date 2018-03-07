@@ -1,6 +1,3 @@
-[submodule "vendor/cakedc/users"]
-	path = vendor/cakedc/users
-	url = https://github.com/ambagasdowa/users.git
 [submodule "plugins/Paper"]
 	path = plugins/Paper
 	url = https://github.com/ambagasdowa/Paper.git
