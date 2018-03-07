@@ -216,12 +216,30 @@ if (Configure::read('debug')) {
 }
 
 /**
+  * @package themes section
+  */
+/**
 *   Load a paper theme
 */
 Plugin::load('Paper');
+
+/**
+*   Load a BootstrapUI theme
+*/
+// Plugin::load('BootstrapUI');
 
 /**
   * Load a adminlte dashboard theme
   * uncomment for enable
 */
 Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
+
+/**
+  * NOTE @users plugin cakedc
+ **/
+Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+
+// Enablin CRUD
+// Plugin::load('Crud');
+
+Plugin::load('Acl', ['bootstrap' => true]);

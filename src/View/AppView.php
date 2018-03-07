@@ -35,6 +35,9 @@ class AppView extends View
      * @return void
      */
     public function initialize() {
+        // CakeDc Users Helper
+        $this->loadHelper('CakeDC/Users.User');
         $this->loadHelper('Form', ['className' => 'AdminLTE.Form']);
+
     }
 }
