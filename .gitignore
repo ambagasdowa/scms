@@ -6,7 +6,7 @@
 /tmp/*
 /tmp/debug_kit.sqlite
 /vendor/*
-/plugin/*
+
 
 # OS generated files #
 ######################
