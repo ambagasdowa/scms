@@ -34,13 +34,13 @@ class PagesController extends AppController
     *    @param paper fix
     */
 
-    public function beforeRender (\Cake\Event\Event $event) {
-      // NOTE choose a theme
-      $this->viewBuilder()->theme('Paper');
-      // OR
-      // $this->viewBuilder()->theme('AdminLTE');
-      // NOTE choose a theme
-    }
+    // public function beforeRender (\Cake\Event\Event $event) {
+    //   // NOTE choose a theme
+    //   // $this->viewBuilder()->theme('Paper');
+    //   // OR
+    //   // $this->viewBuilder()->theme('AdminLTE');
+    //   // NOTE choose a theme
+    // }
 
     /**
      * Displays a view

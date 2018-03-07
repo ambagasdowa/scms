@@ -216,6 +216,17 @@ if (Configure::read('debug')) {
 }
 
 /**
+  * NOTE @users plugin cakedc
+ **/
+Configure::write('Users.config', ['users']);
+Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+
+// Enablin CRUD
+// Plugin::load('Crud');
+
+Plugin::load('Acl', ['bootstrap' => true]);
+
+/**
   * @package themes section
   */
 /**
@@ -233,13 +244,3 @@ Plugin::load('Paper');
   * uncomment for enable
 */
 Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
-
-/**
-  * NOTE @users plugin cakedc
- **/
-Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
-
-// Enablin CRUD
-// Plugin::load('Crud');
-
-Plugin::load('Acl', ['bootstrap' => true]);

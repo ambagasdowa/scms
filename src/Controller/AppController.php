@@ -44,10 +44,6 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
-        /**
-        *   NOTE adding Auth support
-        */
-
         $this->loadComponent('Acl', [
             'className' => 'Acl.Acl'
         ]);
@@ -71,16 +67,7 @@ class AppController extends Controller
         // NOTE Set theme as General uncomment
         // $this->viewBuilder()->setTheme('AdminLTE');
 
-        // $this->viewBuilder()->setTheme('Paper');
-
-        // ALERT or can set the theme as perController setting adding the method beforeRender
-            // public function beforeRender (\Cake\Event\Event $event) {
-            //   // NOTE choose a theme
-            //   $this->viewBuilder()->theme('Paper');
-            // OR
-            //   $this->viewBuilder()->theme('AdminLTE');
-            //   // NOTE choose a theme
-            // }
+        $this->viewBuilder()->setTheme('Paper');
         // Set theme as General uncomment
 
         // NOTE: These defaults are just to get started quickly with development
