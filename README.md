@@ -6,6 +6,9 @@
 ```bash
 git clone https://github.com/ambagasdowa/scms.git
 ```
+then
+composer install 
+
 
 run
 ```bash
@@ -22,15 +25,13 @@ and after [optional]
 composer suggests | xargs -i composer require {}
 ```
 
-```bash
-run install.sh
-```
 
 * Build a schema for users table
 
 ```bash
 bin/cake migrations migrate -p CakeDC/Users
 ```
+
 
 * Create a superuser
 
