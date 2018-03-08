@@ -232,7 +232,7 @@ Plugin::load('Acl', ['bootstrap' => true]);
 /**
 *   Load a paper theme
 */
-Plugin::load('Paper');
+Plugin::load('Paper', ['bootstrap' => false, 'routes' => true]);
 
 /**
 *   Load a BootstrapUI theme

@@ -27,7 +27,6 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
     /**
      * Initialization hook method.
      *
@@ -63,6 +62,17 @@ class AppController extends Controller
      * @param \Cake\Event\Event $event The beforeRender event.
      * @return \Cake\Http\Response|null|void
      */
+
+     public function beforeFilter (Event $event) {
+
+     } // End beforeFilter
+
+    /**
+     * Before render callback.
+     *
+     * @param \Cake\Event\Event $event The beforeRender event.
+     * @return \Cake\Http\Response|null|void
+     */
     public function beforeRender(Event $event) {
         // NOTE Set theme as General uncomment
         // $this->viewBuilder()->setTheme('AdminLTE');
@@ -79,4 +89,5 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
     }
+
 }

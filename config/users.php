@@ -148,6 +148,7 @@ $config = [
                 'userModel' => 'MyUsers',
             ],
         ],
+        'authError' => 'Necesita Autorizacion para acceder a este sitio.',
     ],
     'OAuth' => [
         'path' => ['plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'socialLogin', 'prefix' => null],
