@@ -244,3 +244,6 @@ Plugin::load('Paper', ['bootstrap' => false, 'routes' => true]);
   * uncomment for enable
 */
 Plugin::load('AdminLTE', ['bootstrap' => true, 'routes' => true]);
+
+
+// Plugin::load('CakeExcel', ['bootstrap' => true, 'routes' => true]);
