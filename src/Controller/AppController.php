@@ -48,6 +48,11 @@ class AppController extends Controller
         ]);
         $this->loadComponent('CakeDC/Users.UsersAuth');
 
+        // if ($this->Auth->user('role_id') == 'e687cb91-4cdf-4ab2-992f-e76584199c2e') {
+        //   var_dump('Redirect');
+        //   $this->Auth->config('loginRedirect',['controller'=>'articles','action'=>'index']);
+        // }
+
         /*
          * Enable the following components for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
@@ -65,7 +70,42 @@ class AppController extends Controller
 
      public function beforeFilter (Event $event) {
 
+       // debug($this->Auth->user('role_id'));
+       // debug($_SESSION);
+       // if (!$this->Auth->user()) {
+       $this->Auth->config('authError', "Necesita Autorizacion!!!");
+
+       if ($this->Auth->user('role_id') == 'e687cb91-4cdf-4ab2-992f-e76584199c2e') {
+
+         // $ruta = $_SERVER['HTTP_HOST'].'/pages/reports/monitor';
+         // $ruta = '/pages/reports/monitor';
+         // var_dump($this->Url->build('/pages/reports/monitor'));
+
+        // return $this->redirect($this->Url->build('/pages/reports/monitor'));
+         // $this->Auth->config('loginRedirect',$this->Url->build('/pages/reports/monitor'));
+       // return $this->redirect('/Articles');
+       // return $this->redirect($ruta);
+
+       }
+
+
      } // End beforeFilter
+
+
+     public function afterFilter (Event $event) {
+     //
+     //   // debug($this->Auth->user('role_id'));
+     //   // debug($_SESSION);
+     //   // if (!$this->Auth->user()) {
+     //   // $this->Auth->config('authError', "Necesita Autorizacion!!!");
+     //
+     //   // if ($this->Auth->user('role_id') == 'e687cb91-4cdf-4ab2-992f-e76584199c2e') {
+     //     // var_dump('Redirect');
+         // return $this->redirect('/Articles/index');
+         // $this->Auth->config('loginRedirect',['controller'=>'Articles','action'=>'index']);
+     //   // }
+      // return $this->redirect(['controller'=>'Articles','action' => 'index']);
+     } // End afterFilter
 
     /**
      * Before render callback.
