@@ -3732,16 +3732,16 @@
         },
         {
             "name": "cakephp/debug_kit",
-            "version": "3.14.1",
+            "version": "3.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/debug_kit.git",
-                "reference": "f9aedbc9616142138d921011337d785f553f830c"
+                "reference": "b5e11f386b9ff28694950f68ef3e0456c242051b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/f9aedbc9616142138d921011337d785f553f830c",
-                "reference": "f9aedbc9616142138d921011337d785f553f830c",
+                "url": "https://api.github.com/repos/cakephp/debug_kit/zipball/b5e11f386b9ff28694950f68ef3e0456c242051b",
+                "reference": "b5e11f386b9ff28694950f68ef3e0456c242051b",
                 "shasum": ""
             },
             "require": {
@@ -3788,7 +3788,7 @@
                 "debug",
                 "kit"
             ],
-            "time": "2018-02-19T13:01:28+00:00"
+            "time": "2018-03-08T18:21:10+00:00"
         },
         {
             "name": "composer/ca-bundle",
