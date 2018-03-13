@@ -3,14 +3,12 @@ CREATE TABLE `casillas`(
  `rgl_id` INT(11) NOT NULL,
  `abo_id` INT(11) NOT NULL,
  `cap_id` INT(11) NOT NULL,
-
  `municipio` TEXT DEFAULT NULL,
  `seccion` TEXT DEFAULT NULL,
  `distrito` TEXT DEFAULT NULL,
  `urbana` TEXT DEFAULT NULL,
  `tipo` TEXT DEFAULT NULL,
- `locacion` TEXT DEFAULT NULL,
- `distrito` TEXT DEFAULT NULL
+ `locacion` TEXT DEFAULT NULL
 );
 ALTER TABLE `casillas` COMMENT = 'INFORMACION CASILLAS';
 
