@@ -7,10 +7,10 @@
   -- Casillas descritions
   -- incidents report ->
 
-
-  CREATE TABLE `casillas`(
+  create table `casillas`(
    `id` unsigned INT(11) not null auto_increment,
    `name` char(50) not null;
+   `description` char(150) not null,
 
    `rgl_id` INT(11) NOT NULL,  -- ??
    `abo_id` INT(11) NOT NULL,  -- ??
@@ -20,38 +20,39 @@
    `seccion` TEXT DEFAULT NULL,
    -- `distrito` TEXT DEFAULT NULL,
    `urbana` TEXT DEFAULT NULL,
-   `tipo` TEXT DEFAULT NULL,
-   `locacion` TEXT DEFAULT NULL,
-   `distrito` TEXT DEFAULT NULL,       -- Appears two times
+   `tipo` TEXT DEFAULT NULL,  -- basica,contigua,especial || Presidente.Senador,Diputado,Ayuntamiento ??
+   `distrito` TEXT DEFAULT NULL, -- IX,X Appears two times
+   `locacion` TEXT DEFAULT NULL, -- localidad
    `created` DATETIME,
    `modified` DATETIME,
-   PRIMARY KEY (`id`),
-   UNIQUE KEY (name)
-  ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
-
-  ALTER TABLE `casillas` COMMENT = 'INFORMACION CASILLAS';
+   primary key (`id`),
+   unique key (name)          -- avoid duplicates [optional]
+  ) engine=InnoDB default charset=utf8mb4 ;
 
   -- CASILLAS PRINCESA jajajaja
-  CREATE TABLE `presencias`(
+  CREATE TABLE `casillas_presencias`(
    `id` INT(11) NOT NULL,
    `casillas_id` INT(11) NOT NULL,
    `hora_presencia` DATETIME DEFAULT NULL,
    `hora_inivotacion` DATETIME DEFAULT NULL,
    `info_validada` TINYINT(2) DEFAULT NULL
    `created` DATETIME,
-   `modified` DATETIME
+   `modified` DATETIME,
+   INDEX casillas_index (casillas_id), 	-- build a index  Preserve the data Homogeniux [Optional]
+   FOREIGN KEY (casillas_id)		-- declare as fk
+       REFERENCES casillas(id)	-- reference to a parent
+       ON update cascade on delete restrict		-- set the action if casillas exists then drop the delete instruction
   );
-  ALTER TABLE `presencias` COMMENT = 'INFORMACION CASILLAS';
-  ALTER TABLE `presencias`
+  ALTER TABLE `casillas_presencias` COMMENT = 'INFORMACION CASILLAS';
+  ALTER TABLE `casillas_presencias`
     ADD PRIMARY KEY (`id`);
-  ALTER TABLE `presencias`
+  ALTER TABLE `casillas_presencias`
   MODIFY `id` unsigned INT(11) NOT NULL AUTO_INCREMENT;
-
 
   CREATE TABLE `partidos`(
    `id` INT(11) NOT NULL,
-   `nombre` TEXT DEFAULT NULL,
-   `formula` TEXT DEFAULT NULL
+   `nombre` TEXT DEFAULT NULL, -- coal1, coal2 ....
+   `formula` TEXT DEFAULT NULL -- Coaliciones
   );
   ALTER TABLE `partidos` COMMENT = 'INFORMACION PARTIDOS';
   ALTER TABLE `partidos`
@@ -60,7 +61,7 @@
   MODIFY `id` unsigned INT(11) NOT NULL AUTO_INCREMENT;
 
 
-  CREATE TABLE `incidencias`(
+  CREATE TABLE `incidencias`(  -- Catalog
   `id` INT(11) NOT NULL,
   `titulo` TEXT DEFAULT NULL,
   `descripcion` TEXT DEFAULT NULL
@@ -91,12 +92,24 @@
   ALTER TABLE `partidos_incidencias`
   MODIFY `id` unsigned INT(11) NOT NULL AUTO_INCREMENT;
 
+-- ======================================= Proposal of reports =============================================== --
+    create table reportes (
+      `id` unsigned INT(11) not null auto_increment,
+      `casillas_id` unsigned int(11) not null ,
+      `instalacion`
+      `inicio`
+      `cierre`
+    )engine=InnoDB default charset=utf8mb4;
+
+-- ======================================= Proposal of reports =============================================== --
+
+
 
   CREATE TABLE `reporte_primero`(
   `id` INT(11) NOT NULL,
   `casillas_id` INT(11) NOT NULL,
   `hora_instalacion` DATETIME DEFAULT NULL,
-  `hora_inivotacion` DATETIME DEFAULT NULL,
+  `hora_inivotacion` DATETIME DEFAULT NULL,   -- repeated in  casillas_presencias
   `lugar_indi_ieqro` TINYINT(2) DEFAULT NULL,
   `toma_gente_fila` TINYINT(2) DEFAULT NULL,
   `pres_pan` TINYINT(2) DEFAULT NULL,
@@ -125,7 +138,7 @@
 
   CREATE TABLE `reporte_segundo_tercero`(
   `id` INT(11) NOT NULL,
-  `casilla_id` INT(11) NOT NULL,
+  `casillas_id` INT(11) NOT NULL,
   `votantes_segundo` INT(11) DEFAULT NULL,
   `promovidos_segundo` INT(11) DEFAULT NULL,
   `hr_voto_segundo` DATETIME DEFAULT NULL,
@@ -145,7 +158,7 @@
 
   CREATE TABLE `reporte_cierre`(
   `id`  INT(11) NOT NULL,
-  `casilla_id` INT(11) NOT NULL,
+  `casillas_id` INT(11) NOT NULL,
   `hr_cierre` DATETIME DEFAULT NULL,
   `habia_gente_fila` TINYINT(2) DEFAULT NULL,
   `votantes` INT(11) DEFAULT NULL,
@@ -162,7 +175,7 @@
 
   CREATE TABLE `resultados_finales`(
   `id` INT(11) NOT NULL,
-  `casilla_id` INT(11) NOT NULL,
+  `casillas_id` INT(11) NOT NULL,
   `res_pan` INT(11) DEFAULT NULL,
   `res_pri` INT(11) DEFAULT NULL,
   `res_prd` INT(11) DEFAULT NULL,

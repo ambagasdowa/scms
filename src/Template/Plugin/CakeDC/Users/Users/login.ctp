@@ -18,9 +18,9 @@ use Cake\Core\Configure;
         <div class="users form">
             <?= $this->Flash->render('auth') ?>
             <?= $this->Form->create() ?>
- 
+
         <div class="card card-user">
-        
+
             <div class="content">
                 <legend><?= __d('CakeDC/Users', 'INCIO SESIÓN - PROCESO ELECTORAL LOCAL') ?></legend>
                 <img class="img-responsive" src="<?php echo $this->request->webroot?>Paper/img/partidos/frentexqroo.jpg">
@@ -28,7 +28,7 @@ use Cake\Core\Configure;
                 <?= $this->Form->control('username', ['label' => FALSE, 'required' => true,'placeholder'=>'USUARIO']) ?>
                 <?= $this->Form->control('password', ['label' => FALSE, 'required' => true,'placeholder'=>'CLAVE']) ?>
                 <?php
-               /* if (Configure::read('Users.reCaptcha.login')) {
+                if (Configure::read('Users.reCaptcha.login')) {
                     echo $this->User->addReCaptcha();
                 }
                 if (Configure::read('Users.RememberMe.active')) {
@@ -37,18 +37,18 @@ use Cake\Core\Configure;
                         'label' => __d('CakeDC/Users', 'Recordarme'),
                         'checked' => Configure::read('Users.RememberMe.checked')
                     ]);
-                }*/
+                }
                 ?>
                 <?php
                 $registrationActive = Configure::read('Users.Registration.active');
                 if ($registrationActive) {
-                   // echo $this->Html->link(__d('CakeDC/Users', 'Registrarse'), ['action' => 'register']);
+                   echo $this->Html->link(__d('CakeDC/Users', 'Registrarse'), ['action' => 'register']);
                 }
                 if (Configure::read('Users.Email.required')) {
                     if ($registrationActive) {
-                        //echo ' | ';
+                        echo ' | ';
                     }
-                   // echo $this->Html->link(__d('CakeDC/Users', 'Resetear Clave'), ['action' => 'requestResetPassword']);
+                   echo $this->Html->link(__d('CakeDC/Users', 'Resetear Clave'), ['action' => 'requestResetPassword']);
                 }
                 ?>
             <hr/><br/>
@@ -57,7 +57,7 @@ use Cake\Core\Configure;
             <?= $this->Form->end() ?>
             </div>
         </div>
-                
+
         </div>
     </div>
 </div>

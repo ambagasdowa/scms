@@ -26,13 +26,13 @@ $config = [
         'Token' => ['expiration' => 3600],
         'Email' => [
             // determines if the user should include email
-            'required' => true,
+            'required' => false,
             // determines if registration workflow includes email validation
-            'validate' => true,
+            'validate' => false,
         ],
         'Registration' => [
             // determines if the register is enabled
-            'active' => true,
+            'active' => false,
             // determines if the reCaptcha is enabled for registration
             'reCaptcha' => true,
             // allow a logged in user to access the registration form
@@ -106,7 +106,7 @@ $config = [
         'Avatar' => ['placeholder' => 'CakeDC/Users.avatar_placeholder.png'],
         'RememberMe' => [
             // configure Remember Me component
-            'active' => true,
+            'active' => false,
             'checked' => true,
             'Cookie' => [
                 'name' => 'remember_me',

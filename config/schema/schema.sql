@@ -1,31 +1,16 @@
--- Casillas descritions
--- incidents report ->
-
-
 CREATE TABLE `casillas`(
  `id` INT(11) NOT NULL,
-<<<<<<< HEAD
-
- `rgl_id` INT(11) NOT NULL,  -- ??
- `abo_id` INT(11) NOT NULL,  -- ??
- `cap_id` INT(11) NOT NULL,  -- ??
-
-=======
  `rgl_id` INT(11) NOT NULL,
  `abo_id` INT(11) NOT NULL,
  `cap_id` INT(11) NOT NULL,
->>>>>>> c7afdf80191d837ccff701277bd4cce14c184a7a
+
  `municipio` TEXT DEFAULT NULL,
  `seccion` TEXT DEFAULT NULL,
  `distrito` TEXT DEFAULT NULL,
  `urbana` TEXT DEFAULT NULL,
  `tipo` TEXT DEFAULT NULL,
-<<<<<<< HEAD
- `locacion` TEXT DEFAULT NULL,
- `distrito` TEXT DEFAULT NULL       -- Appears two times
-=======
  `locacion` TEXT DEFAULT NULL
->>>>>>> c7afdf80191d837ccff701277bd4cce14c184a7a
+ -- `distrito` TEXT DEFAULT NULL
 );
 ALTER TABLE `casillas` COMMENT = 'INFORMACION CASILLAS';
 
@@ -35,7 +20,7 @@ ALTER TABLE `casillas`
 ALTER TABLE `casillas`
 MODIFY `id` INT(11) NOT NULL AUTO_INCREMENT;
 
--- CASILLAS PRINCESA jajajaja
+
 CREATE TABLE `casillas_presencia`(
  `id` INT(11) NOT NULL,
  `casilla_id` INT(11) NOT NULL,
