@@ -2,6 +2,7 @@
 ##########################
 /config/app.php
 /config/.env
+/config/schema/schema_test.sql
 /logs/*
 /tmp/*
 /tmp/debug_kit.sqlite
